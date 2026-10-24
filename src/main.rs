@@ -8,10 +8,11 @@ mod day5;
 mod day6;
 mod day7;
 mod day8;
+mod day9;
 mod shared;
 
 fn main() {
-    day2();
+    day9();
 }
 
 #[allow(dead_code)]
@@ -98,6 +99,7 @@ fn day7() {
     );
 }
 
+#[allow(dead_code)]
 fn day8() {
     println!(
         "Day 8 solution: {}",
@@ -107,4 +109,15 @@ fn day8() {
         "Day 8 part 2 solution: {}",
         day8::solve(read_file_line_by_line_coordinates("8"), true)
     );
+}
+
+fn day9() {
+    println!(
+        "Day 9 solution: {}",
+        day9::solve(read_file_line_by_line_2d_coordinates("9"), false)
+    );
+    // println!(
+    //     "Day 9 part 2 solution: {}",
+    //     day9::solve(read_file_line_by_line_coordinates("9"), true)
+    // );
 }

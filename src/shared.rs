@@ -67,3 +67,20 @@ pub fn read_file_line_by_line_coordinates(day: &str) -> Vec<(i64, i64, i64)> {
         })
         .collect()
 }
+
+pub fn read_file_line_by_line_2d_coordinates(day: &str) -> Vec<(i64, i64)> {
+    let file = File::open(format!("./input/day{}.txt", day)).expect("Could not open file");
+    let reader = BufReader::new(file);
+
+    reader
+        .lines()
+        .map(|line| {
+            let coords: Vec<i64> = line
+                .expect("Could not read line")
+                .split(',')
+                .map(|c| c.parse::<i64>().unwrap())
+                .collect();
+            (coords[0], coords[1])
+        })
+        .collect()
+}
